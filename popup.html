@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Annotator</title>
+  <style>
+    /* Add your styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffcc33, #ff99cc, #66ccff);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .color-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .highlight-color {
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border 0.3s ease;
+    }
+
+    .highlight-color:focus {
+      outline: none;
+    }
+
+    textarea {
+      width: 100%;
+      height: 60px;
+      margin-top: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 20px);
+      padding: 5px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    #search-results {
+      margin-top: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Web Annotator</h1>
+    <div class="color-options">
+      <button class="highlight-color" data-color="yellow" style="background-color: yellow;"></button>
+      <button class="highlight-color" data-color="green" style="background-color: green;"></button>
+      <button class="highlight-color" data-color="blue" style="background-color: blue;"></button>
+      <button class="highlight-color" data-color="pink" style="background-color: pink;"></button>
+      <button class="highlight-color" data-color="orange" style="background-color: orange;"></button>
+      <button class="highlight-color" data-color="purple" style="background-color: purple;"></button>
+      <button class="highlight-color" data-color="red" style="background-color: red;"></button>
+      <button class="highlight-color" data-color="cyan" style="background-color: cyan;"></button>
+      <button class="highlight-color" data-color="lime" style="background-color: lime;"></button>
+      
+    </div>
+    <textarea id="note-text" placeholder="Add a note..."></textarea>
+    <button id="save-note">Save Note</button>
+    <input type="text" id="search-query" placeholder="Search notes...">
+    <button id="search-annotations">Search</button>
+    <div id="search-results"></div>
+    <button id="export-annotations">Export Annotations</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
